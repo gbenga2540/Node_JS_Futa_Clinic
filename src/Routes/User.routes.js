@@ -56,7 +56,7 @@ router.post("/auth/signup", async (req, res) => {
                                         .catch((err) => {
                                             res.json({
                                                 status: "error",
-                                                code: "An error occured while trying to save user's info to Server!",
+                                                code: err,
                                             });
                                         })
                                         .then(async (result) => {
