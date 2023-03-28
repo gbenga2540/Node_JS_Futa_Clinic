@@ -39,7 +39,7 @@ router.post("/auth/signup", async (req, res) => {
                     .catch((err) => {
                         res.json({
                             status: "error",
-                            code: "Error trying to verify User Email!",
+                            code: err,
                         });
                     })
                     .then(async (result) => {
@@ -148,7 +148,7 @@ router.post("/auth/signin", async (req, res) => {
                     .catch((err) => {
                         res.json({
                             status: "error",
-                            code: "An error occured while trying to Sign In User!",
+                            code: err,
                         });
                     })
                     .then((result) => {

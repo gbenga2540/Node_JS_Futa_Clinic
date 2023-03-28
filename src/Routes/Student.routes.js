@@ -42,7 +42,7 @@ router.post('/create', verifyJWTbody, async (req, res) => {
                         .catch(err => {
                             res.json({
                                 status: "error",
-                                code: "An error occured while trying to upload Student's Information to the Server!"
+                                code: err
                             });
                         })
                         .then(async result => {
@@ -119,7 +119,7 @@ router.get('/:studentid', verifyJWTHeader, async (req, res) => {
                 .catch(err => {
                     res.json({
                         status: "error",
-                        code: "An error occured while trying to validate Student's ID!"
+                        code: err
                     });
                 })
                 .then(async result => {
@@ -188,7 +188,7 @@ router.get('/', verifyJWTHeader, async (req, res) => {
                 .catch(err => {
                     res.json({
                         status: "error",
-                        code: "An error occured while trying to load all Student's Information!"
+                        code: err
                     });
                 })
                 .then(async result => {
