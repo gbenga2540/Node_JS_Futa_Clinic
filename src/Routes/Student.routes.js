@@ -76,7 +76,6 @@ router.post('/create', verifyJWTbody, async (req, res) => {
             });
         }
     } catch (err) {
-        console.log(err);
         res.json({
             status: "error",
             code: "An error occured while trying to create Student's Data!"
